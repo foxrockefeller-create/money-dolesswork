@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Money Map — 15 Hot Points</title>
+<meta name="description" content="Fifteen hot points from five films about where money comes from, who controls it, and what breaks next — Finding the Money, Clarke &amp; Dawe, Varoufakis, Money Masters, and Treasury Secretary Bessent.">
+<meta property="og:title" content="The Money Map — 15 Hot Points">
+<meta property="og:description" content="Where money comes from, who controls it, and what breaks next. Five films, one map.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0D0B;
+    --surface:#111613;
+    --surface-2:#161C18;
+    --line:rgba(255,255,255,.09);
+    --line-strong:rgba(255,255,255,.16);
+    --ink:#E9EEEA;
+    --muted:#95A39B;
+    --faint:#6B7872;
+    --mint:#5EE39A;
+    --gold:#E9B84C;
+    --rose:#F2796C;
+    --serif:"Fraunces",ui-serif,Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --gutter:clamp(18px,5vw,56px);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-block:clamp(56px,11vw,120px) clamp(36px,7vw,72px);overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:-40% -20% auto -20%;height:120%;
+    background:radial-gradient(60% 50% at 50% 0%,rgba(94,227,154,.13),transparent 70%),
+               radial-gradient(40% 40% at 85% 10%,rgba(233,184,76,.10),transparent 70%);
+    pointer-events:none;
+  }
+  .hero > *{position:relative}
+  .kicker{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);
+    font-weight:600;margin:0 0 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .kicker::before{content:"";width:28px;height:1px;background:var(--mint);flex:none}
+  h1{
+    font-family:var(--serif);font-weight:900;font-variation-settings:"opsz" 144;
+    font-size:clamp(40px,8.6vw,88px);line-height:.98;letter-spacing:-.02em;
+    margin:0 0 24px;max-width:17ch;
+  }
+  h1 em{font-style:normal;color:var(--mint)}
+  .standfirst{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:60ch;margin:0 0 32px}
+  .standfirst strong{color:var(--ink);font-weight:600}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--faint)}
+  .meta span{border:1px solid var(--line);border-radius:100px;padding:5px 13px;white-space:nowrap}
+
+  /* ---------- notice ---------- */
+  .notice{
+    border-left:2px solid var(--gold);background:var(--surface);
+    padding:20px 22px;border-radius:0 10px 10px 0;margin-block:clamp(32px,6vw,56px);
+    font-size:15.5px;color:var(--muted);
+  }
+  .notice b{color:var(--gold);font-weight:600}
+
+  /* ---------- act headers ---------- */
+  .act{padding-top:clamp(44px,8vw,84px)}
+  .act-head{border-top:1px solid var(--line-strong);padding-top:22px;margin-bottom:34px}
+  .act-no{
+    font-family:var(--serif);font-weight:900;font-size:13px;letter-spacing:.2em;
+    text-transform:uppercase;margin:0 0 8px;color:var(--accent)
+  }
+  .act-head h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(27px,4.6vw,42px);
+    line-height:1.08;letter-spacing:-.015em;margin:0 0 10px;max-width:24ch;
+  }
+  .act-head p{margin:0;color:var(--faint);font-size:15.5px;max-width:58ch}
+  #act1{--accent:var(--mint)} #act2{--accent:var(--gold)} #act3{--accent:var(--rose)}
+
+  /* ---------- point cards ---------- */
+  .points{display:grid;gap:16px}
+  @media(min-width:860px){.points{grid-template-columns:1fr 1fr}}
+  .pt{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:26px 24px 22px;position:relative;overflow:hidden;
+  }
+  .pt::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);opacity:.85}
+  .pt-no{
+    font-family:var(--serif);font-weight:900;font-variation-settings:"opsz" 144;
+    font-size:30px;line-height:1;color:var(--accent);margin:0 0 14px;letter-spacing:-.02em;
+  }
+  .pt h3{
+    font-family:var(--serif);font-weight:600;font-size:21.5px;line-height:1.22;
+    letter-spacing:-.01em;margin:0 0 12px;
+  }
+  .pt p{margin:0 0 16px;font-size:16px;color:var(--muted)}
+  .pt p:last-of-type{margin-bottom:16px}
+  .src{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.07em;
+    text-transform:uppercase;font-weight:600;color:var(--faint);
+    border-top:1px solid var(--line);padding-top:13px;width:100%;
+  }
+  .src::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+  .pt.wide{grid-column:1/-1}
+
+  /* ---------- diagrams ---------- */
+  figure{
+    margin:16px 0 0;grid-column:1/-1;background:var(--surface-2);
+    border:1px solid var(--line);border-radius:14px;padding:26px 22px 20px;
+  }
+  figure h4{
+    font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 4px;letter-spacing:-.01em;
+  }
+  figure .figsub{margin:0 0 20px;font-size:14.5px;color:var(--faint)}
+  figcaption{margin-top:16px;font-size:14px;color:var(--faint);border-top:1px solid var(--line);padding-top:14px}
+  .svgscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .svgscroll svg{display:block;min-width:300px;height:auto;width:100%}
+  .dlabel{font-family:var(--sans);font-size:12.5px;font-weight:600;fill:var(--ink)}
+  .dsub{font-family:var(--sans);font-size:11px;fill:var(--faint)}
+  .dnum{font-family:var(--serif);font-size:15px;font-weight:900;fill:var(--ink)}
+
+  /* ---------- pull quote ---------- */
+  .pull{
+    margin-block:clamp(40px,7vw,72px);padding:clamp(30px,5vw,52px) 0;
+    border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);
+  }
+  .pull blockquote{
+    margin:0;font-family:var(--serif);font-weight:400;
+    font-size:clamp(25px,4.4vw,42px);line-height:1.16;letter-spacing:-.015em;max-width:30ch;
+  }
+  .pull blockquote span{color:var(--gold)}
+  .pull cite{display:block;margin-top:22px;font-style:normal;font-size:14px;color:var(--faint);letter-spacing:.04em}
+
+  /* ---------- compare ---------- */
+  .compare{padding-top:clamp(44px,8vw,84px)}
+  .cgrid{display:grid;gap:16px;margin-top:30px}
+  @media(min-width:760px){.cgrid{grid-template-columns:repeat(3,1fr)}}
+  .col{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 22px}
+  .col.m{--accent:var(--mint)} .col.r{--accent:var(--gold)} .col.h{--accent:var(--rose)}
+  .col > h3{
+    font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 4px;color:var(--accent);
+  }
+  .col > .who{margin:0 0 20px;font-size:13px;color:var(--faint)}
+  .qa{border-top:1px solid var(--line);padding-top:13px;margin-top:13px}
+  .qa:first-of-type{border-top:0;padding-top:0;margin-top:0}
+  .qa dt{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:5px}
+  .qa dd{margin:0;font-size:15px;color:var(--muted)}
+
+  /* ---------- sources ---------- */
+  .sources{padding-top:clamp(44px,8vw,84px);padding-bottom:clamp(44px,8vw,80px)}
+  .sources h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(25px,4vw,34px);
+    margin:0 0 8px;letter-spacing:-.015em;
+  }
+  .sources > p{color:var(--faint);font-size:15.5px;margin:0 0 28px;max-width:56ch}
+  ol.refs{list-style:none;counter-reset:r;margin:0;padding:0;display:grid;gap:12px}
+  ol.refs li{counter-increment:r}
+  ol.refs a{
+    display:flex;gap:16px;align-items:flex-start;text-decoration:none;
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:18px 20px;transition:border-color .16s,background .16s,transform .16s;
+  }
+  ol.refs a:hover,ol.refs a:focus-visible{border-color:var(--mint);background:var(--surface-2);transform:translateY(-1px)}
+  ol.refs a:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+  .rnum{
+    font-family:var(--serif);font-weight:900;font-size:15px;color:var(--faint);
+    flex:none;width:24px;padding-top:2px;
+  }
+  ol.refs a:hover .rnum{color:var(--mint)}
+  .rbody{min-width:0;flex:1}
+  .rtitle{display:block;font-weight:600;font-size:16.5px;line-height:1.3;margin-bottom:5px;letter-spacing:-.005em}
+  .rwho{display:block;font-size:13.5px;color:var(--faint)}
+  .rurl{display:block;font-size:12.5px;color:var(--faint);margin-top:7px;word-break:break-all;font-variant-numeric:tabular-nums}
+  .bonus .rnum{color:var(--gold)}
+  .bonus a:hover{border-color:var(--gold)}
+  .bonus a:hover .rnum{color:var(--gold)}
+  .reflabel{
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+    font-weight:600;margin:30px 0 12px;
+  }
+
+  footer{border-top:1px solid var(--line);padding-block:30px 44px;color:var(--faint);font-size:13.5px}
+  footer p{margin:0 0 6px;max-width:62ch}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Five films · One argument</p>
+    <h1>Who actually <em>makes</em> the money?</h1>
+    <p class="standfirst">
+      A documentary, a satire, a 1996 polemic, a Greek finance minister and a sitting US Treasury
+      Secretary all answer the same question — and they do not agree. <strong>Fifteen hot points</strong>
+      on where dollars come from, who holds the pen, and what breaks next.
+    </p>
+    <div class="meta">
+      <span>15 points</span>
+      <span>3 acts</span>
+      <span>6 sources</span>
+      <span>Updated October 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="notice">
+    <b>Read this as a map, not a manifesto.</b> These sources contradict each other on purpose —
+    one says the debt is your savings, another says the money power was stolen, a third says the
+    bill is about to arrive. Every point below is labelled with who is making the claim.
+  </p>
+</div>
+
+<!-- ============ ACT I ============ -->
+<section class="act" id="act1">
+  <div class="wrap">
+    <div class="act-head">
+      <p class="act-no">Act I</p>
+      <h2>The mechanics: where a dollar actually comes from</h2>
+      <p>Points 1–6. The plumbing almost nobody is taught — and the joke that lands because the plumbing really is that strange.</p>
+    </div>
+
+    <div class="points">
+
+      <article class="pt">
+        <p class="pt-no">01</p>
+        <h3>Spending comes first. Taxes come second.</h3>
+        <p>A government that issues its own currency does not collect dollars and then spend them. It spends dollars into existence, then taxes some of them back out. <em>Finding the Money</em> follows economist Stephanie Kelton through that inversion: federal payments are keystrokes crediting bank accounts, not withdrawals from a vault somebody had to fill first.</p>
+        <p class="src">Finding the Money · MMT</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">02</p>
+        <h3>The debt clock is a savings clock.</h3>
+        <p>Every dollar the federal government has spent and not taxed back is still out here — as cash, as bank reserves, as Treasury bonds in someone's portfolio. Kelton's reframe is that the number on the debt clock is a historical record of dollars issued and not yet retired, which is to say: the rest of us are holding it as wealth.</p>
+        <p class="src">Finding the Money</p>
+      </article>
+
+      <article class="pt wide">
+        <p class="pt-no">03</p>
+        <h3>Their red ink is your black ink.</h3>
+        <p>This part is an accounting identity, not an opinion. The government's deficit equals the surplus of everyone else — households, firms, foreigners — to the penny. Wynne Godley's sectoral balances are the hinge of the whole film: you cannot shrink the federal deficit without shrinking private savings or widening the trade deficit. Something has to give, and the arithmetic chooses, not the politics.</p>
+        <p class="src">Finding the Money · Wynne Godley</p>
+      </article>
+
+      <figure>
+        <h4>The mirror</h4>
+        <p class="figsub">One sector's deficit is another's surplus. The two bars are the same number.</p>
+        <div class="svgscroll">
+          <svg viewBox="0 0 720 260" role="img" aria-label="Diagram: a government deficit bar below the zero line mirrored by an equal non-government surplus bar above it.">
+            <line x1="40" y1="130" x2="680" y2="130" stroke="rgba(255,255,255,.28)" stroke-width="1"/>
+            <text x="40" y="123" class="dsub">zero</text>
+
+            <rect x="110" y="44" width="150" height="86" rx="5" fill="#5EE39A" opacity=".16"/>
+            <rect x="110" y="44" width="150" height="86" rx="5" fill="none" stroke="#5EE39A" stroke-width="1.5"/>
+            <text x="185" y="80" class="dnum" text-anchor="middle" fill="#5EE39A">+ $X</text>
+            <text x="185" y="100" class="dlabel" text-anchor="middle">Everyone else</text>
+            <text x="185" y="117" class="dsub" text-anchor="middle">surplus / savings</text>
+
+            <rect x="460" y="130" width="150" height="86" rx="5" fill="#F2796C" opacity=".16"/>
+            <rect x="460" y="130" width="150" height="86" rx="5" fill="none" stroke="#F2796C" stroke-width="1.5"/>
+            <text x="535" y="166" class="dnum" text-anchor="middle" fill="#F2796C">− $X</text>
+            <text x="535" y="186" class="dlabel" text-anchor="middle">Government</text>
+            <text x="535" y="203" class="dsub" text-anchor="middle">deficit</text>
+
+            <path d="M272 112 C 340 112, 390 148, 448 148" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text x="360" y="104" class="dsub" text-anchor="middle">identical magnitude</text>
+          </svg>
+        </div>
+        <figcaption>Cut the red bar and the green bar shrinks with it. That is the trade-off austerity arguments rarely state out loud.</figcaption>
+      </figure>
+
+      <article class="pt">
+        <p class="pt-no">04</p>
+        <h3>Bonds aren't a begging bowl.</h3>
+        <p>In the MMT reading, Treasury issuance is a monetary operation — draining reserves, setting an interest rate, handing savers a risk-free asset — not a sovereign passing a hat because it ran out of money. A currency issuer can, in principle, set the price of its own debt. Whether it should is a different and much harder argument.</p>
+        <p class="src">MMT · Finding the Money</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">05</p>
+        <h3>The limit is real. It just isn't money.</h3>
+        <p>You cannot run out of your own currency. You can absolutely run out of workers, housing, energy, chips and shipping capacity. MMT relocates the constraint from the budget to the real economy: inflation is the ceiling. Critics answer that this is precisely where the theory is thinnest — it names the constraint without a convincing plan for enforcing it.</p>
+        <p class="src">MMT · and its critics</p>
+      </article>
+
+      <article class="pt wide">
+        <p class="pt-no">06</p>
+        <h3>Nobody can explain QE with a straight face.</h3>
+        <p>In October 2011, John Clarke and Bryan Dawe put "economist Avery Largenumber" on air to explain quantitative easing in under three minutes. The sketch closes the loop and then just lets it sit there: the government issues debt, the central bank creates money to buy that debt, and the money came from — the government. Two minutes of deadpan does more damage than most op-eds, because the circularity isn't the joke. The circularity is the mechanism.</p>
+        <p class="src">Clarke and Dawe, 2011</p>
+      </article>
+
+      <figure>
+        <h4>The loop Clarke and Dawe refused to pretend made sense</h4>
+        <p class="figsub">Follow the arrows all the way around and ask where the money entered.</p>
+        <div class="svgscroll">
+          <svg viewBox="0 0 720 300" role="img" aria-label="Diagram: Treasury issues bonds to the market, the central bank creates reserves to buy those bonds, holds the government debt, and remits interest back to the Treasury.">
+            <g stroke="rgba(255,255,255,.26)" stroke-width="1.5" fill="none">
+              <path d="M196 70 L 330 70" marker-end="url(#ar)"/>
+              <path d="M500 94 L 500 150" marker-end="url(#ar)"/>
+              <path d="M330 206 L 220 206" marker-end="url(#ar)"/>
+              <path d="M124 182 L 124 100" marker-end="url(#ar)"/>
+            </g>
+            <defs>
+              <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="rgba(255,255,255,.45)"/>
+              </marker>
+            </defs>
+
+            <rect x="40" y="46" width="156" height="54" rx="7" fill="#111613" stroke="#E9B84C" stroke-width="1.5"/>
+            <text x="118" y="70" class="dlabel" text-anchor="middle">Treasury</text>
+            <text x="118" y="87" class="dsub" text-anchor="middle">issues the bond</text>
+
+            <rect x="330" y="46" width="170" height="54" rx="7" fill="#111613" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/>
+            <text x="415" y="70" class="dlabel" text-anchor="middle">The market</text>
+            <text x="415" y="87" class="dsub" text-anchor="middle">dealers &amp; investors</text>
+
+            <rect x="396" y="150" width="208" height="56" rx="7" fill="#111613" stroke="#5EE39A" stroke-width="1.5"/>
+            <text x="500" y="174" class="dlabel" text-anchor="middle">Central bank</text>
+            <text x="500" y="191" class="dsub" text-anchor="middle">creates reserves, buys it back</text>
+
+            <rect x="60" y="182" width="170" height="56" rx="7" fill="#111613" stroke="#E9B84C" stroke-width="1.5"/>
+            <text x="145" y="206" class="dlabel" text-anchor="middle">Interest remitted</text>
+            <text x="145" y="223" class="dsub" text-anchor="middle">back to the Treasury</text>
+
+            <text x="263" y="62" class="dsub" text-anchor="middle">sells debt</text>
+            <text x="512" y="128" class="dsub">buys the same debt</text>
+            <text x="280" y="198" class="dsub" text-anchor="middle">pays itself</text>
+
+            <text x="360" y="276" class="dsub" text-anchor="middle" font-style="italic">"And where does that money come from?"</text>
+          </svg>
+        </div>
+        <figcaption>Simplified: the central bank buys in the secondary market, not straight from the Treasury. The circularity survives the simplification — which is the point.</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACT II ============ -->
+<section class="act" id="act2">
+  <div class="wrap">
+    <div class="act-head">
+      <p class="act-no">Act II</p>
+      <h2>The power: who is actually holding the pen</h2>
+      <p>Points 7–12. If money is created rather than found, then creating it is a form of authority — and authority is the thing worth fighting over.</p>
+    </div>
+
+    <div class="points">
+
+      <article class="pt">
+        <p class="pt-no">07</p>
+        <h3>Most money is made by banks, not by the state.</h3>
+        <p>The overwhelming bulk of the money supply is commercial bank credit: when a bank writes a loan it creates the deposit on the spot, out of nothing but a balance sheet entry. <em>The Money Masters</em> hammered this in 1996 and was called a crank for it. The Bank of England spelled out the same mechanics in its own 2014 quarterly bulletin.</p>
+        <p class="src">Money Masters · Bank of England</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">08</p>
+        <h3>The charge: the money power was privatised.</h3>
+        <p>Patrick Carmack and Bill Still's three-and-a-half-hour history runs from antiquity to the 1910 meeting at Jekyll Island and the Federal Reserve Act of 1913, arguing the profit from issuing money was captured by a handful of private hands and should be returned to the public. It is a contested and often conspiratorial telling. Treat it as an argument to examine, not a verdict to accept.</p>
+        <p class="src">Money Masters, 1996</p>
+      </article>
+
+      <article class="pt wide">
+        <p class="pt-no">09</p>
+        <h3>Debt-based money needs more debt.</h3>
+        <p>If money arrives in the world as interest-bearing credit, then servicing yesterday's loans requires issuing more tomorrow. That treadmill — not any single villain — is the film's structural grievance, and it is why it ends with a proposed Monetary Reform Act rather than a policy tweak. Note how far this is from Act I: both camps agree money is created from nothing. They draw opposite conclusions about whether that is the problem or the solution.</p>
+        <p class="src">Money Masters, 1996</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">10</p>
+        <h3>Central banks are insulated from you on purpose.</h3>
+        <p>Independence is the design, not the bug. Defenders say it is the only thing stopping politicians from inflating the currency every election year. Yanis Varoufakis takes exactly the same fact and draws the opposite conclusion: the single most consequential economic lever has been deliberately placed beyond the reach of any vote.</p>
+        <p class="src">Varoufakis</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">11</p>
+        <h3>Elections that cannot reach the budget.</h3>
+        <p>Varoufakis's claim comes out of 2015, when a Greek government elected on an explicit anti-austerity mandate discovered that creditors, not voters, set the budget. His argument is not that elections are rigged. It is that they do not reach the decisions that matter — and he recounts the rooms, from a midnight hotel bar with Larry Summers to the clashes with Lagarde and Schäuble, where those decisions were actually made.</p>
+        <p class="src">Varoufakis · The Guardian</p>
+      </article>
+
+      <article class="pt wide">
+        <p class="pt-no">12</p>
+        <h3>The ballot stops at the office door.</h3>
+        <p>Capital's sphere — the workplace, the balance sheet, the bond market — is where distribution is genuinely decided, and none of it is ever put to a vote. That is the basis of Varoufakis's strongest claim: capitalism and democracy are not merely in tension, they are incompatible, and what we call liberal democracy is the performance that papers over the gap.</p>
+        <p class="src">Varoufakis · The Guardian</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="pull">
+  <div class="wrap">
+    <blockquote>“There's no such thing as democracy in our liberal democracies. <span>What there is is a performance.”</span></blockquote>
+    <cite>Yanis Varoufakis — Radical Thinking with Aditya Chakrabortty, The Guardian</cite>
+  </div>
+</section>
+
+<!-- ============ ACT III ============ -->
+<section class="act" id="act3">
+  <div class="wrap">
+    <div class="act-head">
+      <p class="act-no">Act III</p>
+      <h2>The reckoning: the argument as it stands in 2026</h2>
+      <p>Points 13–15. What the man currently running the US Treasury says out loud, and what the crisis camp says is coming.</p>
+    </div>
+
+    <div class="points">
+
+      <article class="pt wide">
+        <p class="pt-no">13</p>
+        <h3>The Treasury Secretary says he cannot control the bond market.</h3>
+        <p>On <em>The Axios Show</em> in October 2026, Scott Bessent — who had earlier declared “I am the house now” — stood by the line while draining it of swagger: “The house doesn't win every hand. The house plays percentages.” Then the admission underneath it: “I can't control the bond market. What I can do is try to get people to slow down and think.” Read Act I again and the sentence gets heavier. If the sovereign issues the currency, why is the bond market the thing with the leverage?</p>
+        <p class="src">Bessent · The Axios Show, Oct 2026</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">14</p>
+        <h3>“It's been a global rise.”</h3>
+        <p>Pressed on surging yields, Bessent's defence was that borrowing costs are climbing everywhere, not just here: “I would be concerned if we were having some kind of idiosyncratic rise.” On prices he conceded the politics outright — “What we're not going to do is do what the Biden people did and tell the American people how good they had it.” He also argued the AI boom is not a rerun of the dot-com bubble.</p>
+        <p class="src">Bessent · The Axios Show, Oct 2026</p>
+      </article>
+
+      <article class="pt">
+        <p class="pt-no">15</p>
+        <h3>The crisis case rests on interest expense, not insolvency.</h3>
+        <p>The hard-money warning — Patrick Bet-David's among them — is that debt service eventually crowds out everything else. MMT's reply is that a currency issuer never defaults; it inflates. Mainstream economics sides with neither: a 2019 Chicago survey found not one leading economist agreeing with MMT's core claims, and Krugman, Summers and Rogoff have all called it dangerous. So the honest question was never “can we pay?” It is <em>who absorbs the adjustment</em> — and that is a political question wearing an accountant's coat.</p>
+        <p class="src">Bet-David · MMT critics</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="compare">
+  <div class="wrap">
+    <div class="act-head" style="--accent:var(--ink)">
+      <p class="act-no" style="color:var(--muted)">The disagreement</p>
+      <h2>Three answers to the same five questions</h2>
+      <p>All three camps accept that money is created from nothing. That is where the agreement ends.</p>
+    </div>
+
+    <div class="cgrid">
+
+      <div class="col m">
+        <h3>Modern Monetary Theory</h3>
+        <p class="who">Finding the Money · Kelton · Mosler</p>
+        <dl class="qa"><dt>Where money comes from</dt><dd>Government spending creates it; taxes destroy it.</dd></dl>
+        <dl class="qa"><dt>The real limit</dt><dd>Inflation and real resources — never dollars.</dd></dl>
+        <dl class="qa"><dt>Who's in charge</dt><dd>Congress, if it stopped pretending it is broke.</dd></dl>
+        <dl class="qa"><dt>What breaks</dt><dd>Nothing financial. Manufactured austerity breaks people.</dd></dl>
+        <dl class="qa"><dt>The fix</dt><dd>Budget for real capacity. A job guarantee as price anchor.</dd></dl>
+      </div>
+
+      <div class="col r">
+        <h3>Monetary reform</h3>
+        <p class="who">Money Masters · Carmack &amp; Still</p>
+        <dl class="qa"><dt>Where money comes from</dt><dd>Private banks, as interest-bearing loans.</dd></dl>
+        <dl class="qa"><dt>The real limit</dt><dd>None — and that is the danger, not the opportunity.</dd></dl>
+        <dl class="qa"><dt>Who's in charge</dt><dd>Whoever holds the issuing franchise. Not the public.</dd></dl>
+        <dl class="qa"><dt>What breaks</dt><dd>A debt treadmill that must keep growing to survive.</dd></dl>
+        <dl class="qa"><dt>The fix</dt><dd>Return money creation to the public. End fractional reserve.</dd></dl>
+      </div>
+
+      <div class="col h">
+        <h3>Hard money &amp; crisis</h3>
+        <p class="who">Bet-David · the bond market</p>
+        <dl class="qa"><dt>Where money comes from</dt><dd>Creation, yes — and it is debasement.</dd></dl>
+        <dl class="qa"><dt>The real limit</dt><dd>Creditor confidence. It goes all at once.</dd></dl>
+        <dl class="qa"><dt>Who's in charge</dt><dd>Bondholders. Ask the Treasury Secretary.</dd></dl>
+        <dl class="qa"><dt>What breaks</dt><dd>Interest expense crowds out the budget, then the currency.</dd></dl>
+        <dl class="qa"><dt>The fix</dt><dd>Spend less, own hard assets, expect the adjustment.</dd></dl>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <p>Watch them in this order and the argument builds. Watch them in any order and it still holds up.</p>
+
+    <ol class="refs">
+      <li><a href="https://youtu.be/x3TJFoQWCHA" target="_blank" rel="noopener">
+        <span class="rnum">01</span>
+        <span class="rbody">
+          <span class="rtitle">Finding the Money — Full Documentary</span>
+          <span class="rwho">Giant Pictures · with Stephanie Kelton</span>
+          <span class="rurl">youtu.be/x3TJFoQWCHA</span>
+        </span></a></li>
+
+      <li><a href="https://youtu.be/SEd1OB2qaAg" target="_blank" rel="noopener">
+        <span class="rnum">02</span>
+        <span class="rbody">
+          <span class="rtitle">Secretary Bessent on The Axios Show</span>
+          <span class="rwho">U.S. Department of the Treasury · October 2026</span>
+          <span class="rurl">youtu.be/SEd1OB2qaAg</span>
+        </span></a></li>
+
+      <li><a href="https://youtu.be/j2AvU2cfXRk" target="_blank" rel="noopener">
+        <span class="rnum">03</span>
+        <span class="rbody">
+          <span class="rtitle">Clarke and Dawe — Quantitative Easing</span>
+          <span class="rwho">ClarkeAndDawe · ABC, October 2011</span>
+          <span class="rurl">youtu.be/j2AvU2cfXRk</span>
+        </span></a></li>
+
+      <li><a href="https://youtu.be/MJ725uqMC3o" target="_blank" rel="noopener">
+        <span class="rnum">04</span>
+        <span class="rbody">
+          <span class="rtitle">“There's no such thing as democracy” — Yanis Varoufakis</span>
+          <span class="rwho">Radical Thinking with Aditya Chakrabortty · The Guardian</span>
+          <span class="rurl">youtu.be/MJ725uqMC3o</span>
+        </span></a></li>
+
+      <li><a href="https://youtu.be/bm6oeRgxs0A" target="_blank" rel="noopener">
+        <span class="rnum">05</span>
+        <span class="rbody">
+          <span class="rtitle">The Money Masters (1996)</span>
+          <span class="rwho">Patrick S. J. Carmack &amp; William T. Still</span>
+          <span class="rurl">youtu.be/bm6oeRgxs0A</span>
+        </span></a></li>
+    </ol>
+
+    <p class="reflabel">Bonus reading &amp; viewing</p>
+
+    <ol class="refs bonus">
+      <li><a href="https://en.wikipedia.org/wiki/Modern_Monetary_Theory" target="_blank" rel="noopener">
+        <span class="rnum">06</span>
+        <span class="rbody">
+          <span class="rtitle">Modern Monetary Theory</span>
+          <span class="rwho">Wikipedia — core tenets, and the mainstream objections</span>
+          <span class="rurl">en.wikipedia.org/wiki/Modern_Monetary_Theory</span>
+        </span></a></li>
+
+      <li><a href="https://youtu.be/fCZi2vk6zJk?t=329" target="_blank" rel="noopener">
+        <span class="rnum">07</span>
+        <span class="rbody">
+          <span class="rtitle">“America Will Collapse If This Happens” — Trump, WW3 &amp; the Upcoming Financial Crisis</span>
+          <span class="rwho">Patrick Bet-David on Tom Bilyeu · starts at 5:29</span>
+          <span class="rurl">youtu.be/fCZi2vk6zJk?t=329</span>
+        </span></a></li>
+      </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Summaries and framing are editorial. Quotations are attributed to their speakers; the claims belong to the films, not to this page.</p>
+    <p>money.dolesswork.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
